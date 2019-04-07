@@ -1,3 +1,2 @@
-# Instructions
-Please choose a subfolder (mobile or web).
-Each has separate instructions for running the application from that platform.
+# Stock Market Fantasy League
+COMP4350 soft eng prject
