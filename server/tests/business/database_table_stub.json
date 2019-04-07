@@ -1,0 +1,10 @@
+[
+    {
+        "PrimaryKey": "alpha",
+        "foo": "bar"
+    },
+    {
+        "PrimaryKey": "beta",
+        "foo": "baz"
+    }
+]

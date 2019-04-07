@@ -1,0 +1,17 @@
+# Android Studio
+/build
+libs/
+src/main/res/drawable/
+/.gradle/
+local.properties
+*.iml
+.idea/
+*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.iws
+*.ipr
+*~
+*.swp
+src/main/gen/

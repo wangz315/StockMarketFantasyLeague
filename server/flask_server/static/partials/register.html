@@ -1,0 +1,43 @@
+<div ng-show="sucessToRegister" class="alert alert-success">
+  <strong>Success!</strong> You just successfully registered! Please Login to see your stock information.
+</div>
+<div ng-show="failToRegister" class="alert alert-danger">
+  <strong>Error!</strong> There is an error when register your account, please try again.
+</div>
+<div>
+	<div style ="margin: 10px">User ID:</div>
+	<div class = "row">
+		<div class="col-md-2">
+			<input id="userID-input" type="text" class="form-control" ng-model="userId" aria-describedby="idHelper" placeholder="Enter User ID">
+		</div>
+		<div class="col-md-4">
+			<small id="idHelper" ng-if="!idValidate()" class="animate-if"><font color="red">* User ID length has to be between 6 and 15</font></small>
+        </div>
+    </div>
+
+	<div style ="margin: 10px">First Name:</div>
+	<div class = "row">
+		<div class="col-md-2">
+			<input id="firstName-input" type="text" class="form-control" ng-model="firstName" aria-describedby="fnHelper" placeholder="Enter First Name">
+		</div>
+		<div class="col-md-4">
+			<small id="fnHelper" ng-if="!fNameValidate()" class="animate-if"><font color="red">* First Name is required</font></small>
+	    </div>
+	</div>
+	<div style ="margin: 10px">Last Name:</div>
+	<div class = "row">
+		<div class="col-md-2">
+			<input id="lastName-input" type="text" class="form-control" ng-model="lastName" aria-describedby="lnHelper" placeholder="Enter Last Name">
+		</div>
+		<div class="col-md-4">
+			<small id="lnHelper" ng-if="!lNameValidate()" class="animate-if"><font color="red">* Last Name is required</font></small>
+         </div>
+    </div>
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-md-2">
+			<input id="registerConfirm-button" type="button" class="form-control" value="Register" ng-click="onClickReg()" ng-disabled="!regValidate()" ng-style="regButton.style"/>
+		</div>
+	</div>
+</div>

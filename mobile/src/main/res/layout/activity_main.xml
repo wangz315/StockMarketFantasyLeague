@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="100"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tbMainToolbar"
+        android:title="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="33"
+        android:minHeight="52dp"
+        android:theme="@style/AlertDialog.AppCompat.Light"
+        android:visibility="visible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="33">
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickStartLogin"
+            android:text="Login" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="33">
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:onClick="onClickStartRegister"
+            android:text="Register" />
+    </LinearLayout>
+</LinearLayout>

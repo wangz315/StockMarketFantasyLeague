@@ -1,0 +1,61 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+        <TextView
+            android:id="@+id/tvDisplayUserInformation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="User Profile" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30">
+        <Button
+            android:id="@+id/buttonOpenViewStocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="onClickOpenViewStocks"
+            android:text="View Stocks"
+            tools:text="View Stocks" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30">
+        <Button
+            android:id="@+id/buttonOpenBuyStocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="onClickOpenBuyStocks"
+            android:text="Buy Stocks"
+            tools:text="Buy Stocks" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="30">
+        <Button
+            android:id="@+id/buttonOpenSellStocks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickOpenSellStocks"
+            android:text="Sell Stocks/View Investments"
+            tools:text="Sell Stocks/View Investments" />
+
+    </RelativeLayout>
+</LinearLayout>

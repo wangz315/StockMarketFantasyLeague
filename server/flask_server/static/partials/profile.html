@@ -1,0 +1,52 @@
+<div class="row" ng-show="showUserInfo">
+	<table class="table table-striped">
+	    <thead>
+	        <tr>
+	            <h3>Welcome back, {{userInfo.FirstName}} {{userInfo.LastName}}</h3>
+	            <th></th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        <tr>
+	            <th scope="row">Your balance:</th>
+	            <td class="col-md-3">${{userInfo.Balance}}</td>
+	            <td class="col-md-3"></td>
+	        </tr>
+	    </tbody>
+	</table>
+
+	<table>
+		<div class="modal-body row" ng-show="showErrorTable">
+            <div class="alert alert-warning"><strong>Error!</strong> {{errorInfo.Message}}</div>
+        </div>
+	</table>
+
+		<table class="table table-striped">
+	    <thead>
+	        <tr>
+	            <h4>Invested Stocks</h4>
+	            <th></th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	    	<tr>
+	            <th scope="row">Stock</th>
+	            <td class="col-md-3">Share Count</td>
+	            <td class="col-md-3">Current Value</td>
+	            <td class="col-md-3">Initial Value</td>
+	            <td class="col-md-3">Date Created</td>
+	            <td class="col-md-3"></td>
+	            <td class="col-md-3"></td>
+	        </tr>
+	        <tr ng-repeat="entry in investInfo | orderBy:'-DateCreated':reverse">
+	            <th scope="row">{{entry.StockSymbol}}</th>
+	            <td class="col-md-3">{{entry.ShareCount}}</td>
+	            <td class="col-md-3">{{entry.CurrentValue}}</td>
+	            <td class="col-md-3">{{entry.InitialValue}}</td>
+	            <td class="col-md-3">{{entry.DateCreated}}</td>
+	            <td class="col-md-3 shareCountInput"><input id="share_count_input" type="number" value="1" min="1" max="{{entry.ShareCount}}"></td>
+                <td class="col-md-3"><button id="sell_button" class="btn btn-primary btn-xs" data="{{entry.InvestmentID}}" ng-click="sellInvestment($event, entry.InvestmentID)">Sell</button></td>
+	        </tr>
+	    </tbody>
+	</table>
+</div>

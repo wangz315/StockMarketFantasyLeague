@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <RelativeLayout android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="15">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:text="Sell a stock by double clicking it"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="85">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listDisplayAvailableStocks"/>
+    </RelativeLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,82 @@
+<div class="row">
+    <div class="col-md-10">
+        <h2>Stock Lookup</h2>
+    </div>
+    <div class="col-md-10">
+        <input type="text" class="form-control" id="stockSymbolInput" ng-model="stockSymbol" placeholder="Enter a stock symbol (AMZN, GOOG, etc.)" ng-keyup="$event.keyCode == 13 && fetchStockData()"/>
+    </div>
+    <div class="col-md-2">
+        <input id="search-button" type="button" class="form-control" value="Search" ng-click="fetchStockData()"/>
+    </div>
+</div>
+<hr />
+<table class="table table-striped" ng-show="showStockRealtime">
+    <thead>
+        <tr>
+            <th>Stock Realtime Information</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Stock Name:</th>
+            <td class="col-md-3">{{stockRealtimeInfo.stock_name}}</td>
+            <td class="col-md-3"></td>
+        </tr>
+        <tr>
+            <th scope="row">Stock Price:</th>
+            <td class="col-md-3">{{stockRealtimeInfo.stock_price}}</td>
+            <td class="col-md-3"></td>
+        </tr>
+        <tr>
+            <th scope="row">Stock Open Value: </th>
+            <td class="col-md-3">{{stockRealtimeInfo.stock_open}}</td>
+            <td class="col-md-3"></td>
+        </tr>
+    </tbody>
+    
+</table>
+
+<div ng-show="showStockRealtime" class="col-md-3">
+        <td class="col-md-2"><input type="text" class="form-control" id="amountInvest" ng-model="amountInvest" placeholder="Enter amount" ng-show="showLoggedIn"/></td>
+        <br/>
+
+
+        <!-- Button trigger modal -->
+        <button id="investmentConfirm-button" type="button" ng-show="showLoggedIn" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" ng-click="invest()">
+            Invest
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Invest Confirm</h4>
+              </div>
+              <div class="modal-body">
+                <div ng-show="!disableInvest && !showLoggedInError && !showIntAmtError && !showBalanceError">Your current balance: {{userBalance}}, to invest {{tempSymbol}} with {{amountInvest}} share count will cost you {{totalCost}}.</div>
+                <div class="alert alert-warning" ng-show="showLoggedInError"><strong>Warning!</strong> You have not logged in.</div>
+                <div class="alert alert-warning" ng-show="showIntAmtError"><strong>Warning!</strong> Amount has to be integer.</div>
+                <div class="alert alert-warning" ng-show="showBalanceError"><strong>Warning!</strong> You do not have enough money.</div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="investmentModalConfirm-button" type="button" class="btn btn-primary" ng-click="fetchInvest()" ng-disabled="disableInvest || showLoggedInError || showIntAmtError || showBalanceError">Confirm</button>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+<br/>
+<br/>
+
+<table>
+<chart id="chart" title="Stock Chart" ng-show="showStockRealtime" xData="stockChartXData" yData="stockChartYData" xName="Month" yName="USD" subtitle=""></chart>
+<div class="row" ng-show="showErrorTable">
+    <div class="alert alert-warning">
+        <h4> <strong>Error!</strong> {{errorInfo.Message}}</h4>
+    </div>
+</table>

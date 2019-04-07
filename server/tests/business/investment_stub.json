@@ -1,0 +1,10 @@
+[
+    {
+        "InvestmentID": "someInvestmentID",
+        "UserID": "alpha1992"
+    },
+    {
+        "InvestmentID": "anotherInvestmentID",
+        "UserID": "someUserID"
+    }
+]

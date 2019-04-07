@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="StockApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-cookies.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <!-- jQuery library -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/styles/theme.css">
+    <link rel="stylesheet" href= "static/styles/index.css">
+
+    <title>Stock Market Fantasy League</title>
+
+    <script src="/static/js/app.js"></script>
+    <script src="/static/js/controllers/registerController.js"></script>
+    <script src="/static/js/controllers/signinController.js"></script>
+    <script src="/static/js/controllers/homeController.js"></script>
+    <script src="/static/js/controllers/stockController.js"></script>
+    <script src="/static/js/controllers/profileController.js"></script>
+    
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon"/>
+  </head>
+
+  <body>
+    <div class="container">
+    <!-- Static navbar -->
+      <nav class="navbar navbar-default" ng-controller="homeCtrlr">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-list" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Stock Fantasy League</a>
+          </div>
+          <div class="collapse navbar-collapse" id="nav-list">
+            <ul id="navbar-inner" class="nav navbar-nav">
+              <li ng-class="getClass('/')"><a href="/">Home</a></li>
+              <li id="stocks-button" ng-class="getClass('/stocks')"><a href="/stocks">Stocks</a></li>
+              <li id="profile-button" ng-class="getClass('/profile')" ng-show="isLoggedIn"><a href="/profile">Profile</a></li>
+              <li id="register-button" ng-class="getClass('/register')" ng-hide="isLoggedIn"><a href="/register">Register</a></li>
+              <li id="signin-button" ng-class="getClass('/signin')" ng-hide="isLoggedIn"><a href="/signin">Log In</a></li>
+              <li id="logout-button" ng-show="isLoggedIn"><a href ng-click="logOut()">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="jumbotron" ng-view>
+      </div>
+
+    </div>
+
+    <footer class="footer" >
+        <div class="container">
+          <p class="text-muted">COMP4350 Software Engineering II Group B</p>
+        </div>
+    </footer>
+
+  </body>
+</html>

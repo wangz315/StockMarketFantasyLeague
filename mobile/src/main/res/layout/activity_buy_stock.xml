@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="15"
+        android:weightSum="100">
+
+        <EditText
+            android:id="@+id/etBuyStockSymbol"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:hint="Stock Symbol"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/etBuyStockAmount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:hint="Share Count"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/buttonSubmitTextSearchStockSymbol"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="33"
+            android:onClick="onClickBuyStocks"
+            android:text="Buy Stocks"/>
+    </LinearLayout>
+
+    <RelativeLayout android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="85">
+
+        <TextView
+            android:id="@+id/tvBuyingResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>
