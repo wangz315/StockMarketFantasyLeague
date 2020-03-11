@@ -93,7 +93,7 @@ setup(
     
     install_requires=[
         'boto3==1.4.4',
-        'Flask==0.12',
+        'Flask==1.0',
         'simplejson==3.10.0',
         'pytest==3.0.7',
         'yahoo-finance==1.4.0'
