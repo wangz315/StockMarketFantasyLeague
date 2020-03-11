@@ -104,7 +104,7 @@ setup(
         'mock==2.0.0',
         'moto==0.4.31',
         'nose==1.3.7',
-        'requests==2.13.0'
+        'requests==2.20.0'
     ],
     
     cmdclass={
